@@ -1,6 +1,6 @@
-const {isMatchingAMap} = require('./maps');
+import { isMatchingAMap } from './maps';
 
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+chrome.tabs.onUpdated.addListener(function(tabId, _changeInfo, tab) {
   if (isMatchingAMap(tab.url)) {
     chrome.pageAction.show(tabId);
   } else {
